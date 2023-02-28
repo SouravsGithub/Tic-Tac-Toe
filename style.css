@@ -2,11 +2,15 @@
     box-sizing: border-box;
 }
 
-body {
+body h1 {
+    text-align: center;
+}
+
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .container {
@@ -21,4 +25,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.big-text {
+    font-size: 3rem;
 }

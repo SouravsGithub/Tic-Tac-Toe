@@ -1,4 +1,6 @@
 const boxes = document.querySelectorAll(".box");
+const h1 = document.querySelector("h1");
+const mainContainer = document.querySelector(".main-container");
 const box1 = document.querySelector(".box1");
 const box2 = document.querySelector(".box2");
 const box3 = document.querySelector(".box3");
@@ -8,7 +10,6 @@ const box6 = document.querySelector(".box6");
 const box7 = document.querySelector(".box7");
 const box8 = document.querySelector(".box8");
 const box9 = document.querySelector(".box9");
-console.log(boxes);
 let counter = 0;
 boxes.forEach((box) => {
     box.addEventListener("click", putMark);
@@ -32,7 +33,15 @@ function putMark(event) {
         (box3.innerText === "X" && box6.innerText === "X" && box9.innerText === "X") ||
         (box1.innerText === "X" && box5.innerText === "X" && box9.innerText === "X") ||
         (box3.innerText === "X" && box5.innerText === "X" && box7.innerText === "X")) {
-        console.log("Player 1 won!");
+        h1.innerText = "Player 1 Won!!";
+        h1.classList.add("big-text");
+        mainContainer.style.height = "80vh";
+        boxes.forEach((box) => {
+            box.removeEventListener("click", putMark);
+        });
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
     }
     else if ((box1.innerText === "O" && box2.innerText === "O" && box3.innerText === "O") ||
         (box4.innerText === "O" && box5.innerText === "O" && box6.innerText === "O") ||
@@ -42,7 +51,15 @@ function putMark(event) {
         (box3.innerText === "O" && box6.innerText === "O" && box9.innerText === "O") ||
         (box1.innerText === "O" && box5.innerText === "O" && box9.innerText === "O") ||
         (box3.innerText === "O" && box5.innerText === "O" && box7.innerText === "O")) {
-        console.log("Player 2 won!");
+        h1.innerText = "Player 2 Won!!";
+        h1.classList.add("big-text");
+        mainContainer.style.height = "80vh";
+        boxes.forEach((box) => {
+            box.removeEventListener("click", putMark);
+        });
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
     }
 }
 
